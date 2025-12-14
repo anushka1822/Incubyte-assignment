@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api', // Connects to your FastAPI backend
+  baseURL: 'https://incubyte-assignment-1-ea7f.onrender.com/api', // Connects to your FastAPI backend
 });
 
 // Automatically add the JWT token to every request if it exists
