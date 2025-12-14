@@ -11,7 +11,7 @@ from app.core.database import engine
 async def promote():
     async with engine.begin() as conn:
         # Force update the user 'admin' to role 'admin'
-        await conn.execute(text("UPDATE users SET role = 'admin' WHERE username = 'user1'"))
+        await conn.execute(text("UPDATE users SET role = 'admin' WHERE username = 'admin'"))
     print("✅ SUCCESS: User 'admin' is now an Admin!")
 
 if __name__ == "__main__":

@@ -1,15 +1,23 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom'; // Removed 'BrowserRouter' import
+import { AuthProvider } from './context/AuthContext';
 import Login from './pages/login';
-import Dashboard from './pages/Dashboard'; // <--- Import this
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Welcome from './pages/Welcome';
 
-function App() {
+const App = () => {
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/dashboard" element={<Dashboard />} /> {/* <--- Use Component */}
-    </Routes>
+    <AuthProvider>
+      {/* Router removed here because it exists in main.tsx */}
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
