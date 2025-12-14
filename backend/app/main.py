@@ -15,7 +15,7 @@ app = FastAPI(title="Sweet Shop Management System", lifespan=lifespan)
 # --- ADD THIS BLOCK ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Allow your React Frontend
+    allow_origins=["http://localhost:5173", "https://incubyte-assignment-1-ea7f.onrender.com"],  # Allow your React Frontend
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods (POST, GET, etc)
     allow_headers=["*"],  # Allow all headers
